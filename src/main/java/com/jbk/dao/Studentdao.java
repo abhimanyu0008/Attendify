@@ -13,4 +13,8 @@ public interface Studentdao {
 	public Student getStudentById(int id);
 
 	public String deleteStudent(int id);
+
+	public List<Student> getAllStudentByRoll(List<Integer> list);
+
+	public String updateStudent(Student student);
 }

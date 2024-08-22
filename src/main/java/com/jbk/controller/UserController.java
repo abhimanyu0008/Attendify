@@ -3,6 +3,7 @@ package com.jbk.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.jbk.entities.Student;
 import com.jbk.entities.User;
 import com.jbk.service.UserService;
 
@@ -34,8 +36,15 @@ public class UserController {
 	}
 	
 	@GetMapping("/get-by-id/{id}")
-	public User userGetById(@PathVariable int id) {
+	public User userGetById(@PathVariable String id) {
 		User user=service.userGetById(id);
 		return user;
+	}
+	
+	@DeleteMapping("/delete{id}")
+	public String deleteUser(@PathVariable String id) {
+		String msg=service.deleteUser(id);
+		return msg;
+		
 	}
 }

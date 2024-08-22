@@ -10,6 +10,10 @@ public interface UserDao {
 
 	public List<User> getAllUser();
 
-	public User userGetById(int id);
+	public User userGetById(String id);
+
+	public String deleteUser(String id);
+
+	
 
 }

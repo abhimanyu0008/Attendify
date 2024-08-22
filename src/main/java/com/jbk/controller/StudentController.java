@@ -45,8 +45,9 @@ public class StudentController {
 	}
 
 	@PutMapping("/update-student")
-	public String updateStudent() {
-		return null;
+	public String updateStudent(@RequestBody Student student) {
+	    String msg = service.updateStudent(student);
+	    return msg;
 	}
 
 	@DeleteMapping("/delete/{rollno}")

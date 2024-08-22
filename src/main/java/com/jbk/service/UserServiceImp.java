@@ -24,9 +24,15 @@ public class UserServiceImp implements UserService{
 		return getuser;
 	}
 	@Override
-	public User userGetById(int id) {
+	public User userGetById(String id) {
 		User user=dao.userGetById(id);
 		return user;
 	}
+	@Override
+	public String deleteUser(String id) {
+		String msg=dao.deleteUser(id);
+		return msg;
+	}
+	
 
 }

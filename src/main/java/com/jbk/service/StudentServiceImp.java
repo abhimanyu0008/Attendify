@@ -36,4 +36,16 @@ public class StudentServiceImp implements StudentService {
 		String s = dao.deleteStudent(id);
 		return s;
 	}
+
+	@Override
+	public List<Student> getAllStudentByRoll(List<Integer> list) {
+		List<Student>studentList=dao.getAllStudentByRoll(list);
+		return studentList;
+	}
+
+	@Override
+	public String updateStudent(Student student) {
+		String msg = dao.updateStudent(student);
+        return msg;
+	}
 }
